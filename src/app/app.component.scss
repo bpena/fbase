@@ -1,0 +1,35 @@
+@import '~styles/functions';
+@import '~styles/variables';
+
+:host {
+    @include flex-column();
+
+    .container {
+        @include flex-column();
+
+        .logo {
+            color: inherit;
+            text-decoration: none;
+
+            img {
+                max-width: 32px;
+            }
+        }
+        
+        .sidenav-container {
+            @include flex-column();
+            background-color: rgba($app-background, $app-transparency);
+            overflow: hidden;
+
+            .mat-sidenav-content {
+                @include flex-row();
+                max-height: calc(100vh - 64px);
+                overflow: auto;
+
+                @media (max-width: $app-small-size) {
+                    max-height: calc(100vh - 56px);
+                }
+            }
+        }
+    }
+}

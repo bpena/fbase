@@ -1,0 +1,16 @@
+@import '~styles/functions';
+@import '~styles/variables';
+
+@mixin views() {
+    .view {
+        @include flex-column();
+        bottom: 0;
+        position: fixed;
+        top: 64px;
+        width: 100%;
+
+        @media (max-width: $app-small-size) {
+            top: 56px;
+        }
+    }
+}

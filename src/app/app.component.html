@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <button mat-icon-button *ngIf="isLogged" (click)="snav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h1 class="app-name">
+                <a color="accent" class="logo" routerLink="/">
+                    <img src="/assets/images/logo.png" alt="bbase"> {{ title }}</a>
+            </h1>
+            <span class="spacer"></span>
+
+            <app-select-language></app-select-language>
+            <app-user-menu></app-user-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #snav mode="over" [fixedInViewport]="false">
+            <mat-nav-list>
+                <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

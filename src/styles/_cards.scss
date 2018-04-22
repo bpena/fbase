@@ -1,0 +1,12 @@
+@import '~styles/functions';
+@import '~styles/variables';
+
+@mixin cards() {
+    .mat-card {
+        @include flex-column();
+
+        .mat-card-content {
+            @include flex-column();
+        }
+    }
+}

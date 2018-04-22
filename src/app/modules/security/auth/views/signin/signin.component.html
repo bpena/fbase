@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-content>
+        <h3>{{ i18n.t('Log in') }}</h3>
+        <form [formGroup]="signinForm" (ngSubmit)="signIn(form)" #form="ngForm">
+
+            <mat-form-field class="full-width">
+                <mat-icon matPrefix aria-hidden="false">email</mat-icon>
+                <input matInput placeholder="{{ i18n.t('Email') }}" formControlName="email" #email>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-icon matPrefix>lock</mat-icon>
+                <input matInput type="password" placeholder="{{ i18n.t('Password') }}" formControlName="password" #password>
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button [disabled]="!form.valid" class="full-width" color="primary">{{ i18n.t('Log in') }}</button>
+        </form>
+
+        <div class="form-group button-group">
+            <button mat-raised-button class="full-width" (click)="signInWithFacebook()">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                {{ i18n.t('Login with {0}') | replace: 'Facebook' }}
+            </button>
+
+            <button mat-raised-button class="full-width" (click)="signInWithTwitter()">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                {{ i18n.t('Login with {0}') | replace: 'Twitter' }}
+            </button>
+
+            <button mat-raised-button class="full-width" (click)="signInWithGithub()">
+                <i class="fa fa-github" aria-hidden="true"></i>
+                {{ i18n.t('Login with {0}') | replace: 'Github' }}
+            </button>
+
+            <button mat-raised-button class="full-width" (click)="signInWithGoogle()">
+                <i class="fa fa-google" aria-hidden="true"></i>
+                {{ i18n.t('Login with {0}') | replace: 'Google' }}
+            </button>
+        </div>
+
+        <span class="left full-width">
+            <small>{{ i18n.t('Don\'t have an account?') }}</small> <a mat-button color="accent" routerLink="../signup">{{ i18n.t('Create One') }}</a>
+        </span>
+      
+    </mat-card-content>
+
+</mat-card>

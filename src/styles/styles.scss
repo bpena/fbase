@@ -1,0 +1,29 @@
+@import '~styles/functions';
+@import '~styles/variables';
+@import '~styles/miscellaneous';
+@import '~styles/cards';
+@import '~styles/forms';
+@import '~styles/views';
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
+
+html{
+    @include flex-column();
+    height: 100%;
+    overflow: hidden;
+
+    body {
+        @include flex-column();
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Raleway;
+        margin: 0;
+        overflow: hidden;
+
+        @include miscellaneous();
+        @include cards();
+        @include forms();
+        @include views();
+    }
+}

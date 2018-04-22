@@ -1,0 +1,19 @@
+@import '~styles/functions';
+@import '~styles/variables';
+
+@mixin forms() {
+    form {
+        @include flex-column();
+
+        .mat-form-field {
+            .mat-input-element {
+                padding-bottom: 4px;
+                caret-color: #fff !important;
+            }
+        
+            .mat-input-prefix {
+                margin-right: 5px;
+            }    
+        }    
+    }
+}
