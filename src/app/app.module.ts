@@ -9,7 +9,7 @@ import { AppRouting } from './app.routing';
 import { SecurityModule } from '@security/security.module';
 import { I18NService } from '@core/i18n/service/i18n.service';
 import { AuthService } from '@security/auth/services/auth.service';
-import { AuthGuard } from '@security/auth/services/auth.guard';
+import { LoggedGuard } from '@security/auth/services/logged.guard';
 
 @NgModule({
     declarations: [
@@ -29,8 +29,8 @@ import { AuthGuard } from '@security/auth/services/auth.guard';
         SecurityModule
     ],
     providers: [
-        AuthGuard,
         AuthService,
+        LoggedGuard,
         I18NService
     ],
     bootstrap: [AppComponent]
