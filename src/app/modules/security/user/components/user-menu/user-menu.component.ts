@@ -16,7 +16,6 @@ export class UserMenuComponent implements OnInit {
             private router: Router) { }
 
     ngOnInit() {
-        console.log(this.authService.authenticated);
         this.isLogged = this.authService.loggedIn;
         this.displayname = this.authService.currentUserDisplayName;
     }
