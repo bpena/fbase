@@ -11,6 +11,8 @@ import { WarningSnackbarComponent } from '@core/components/warning-snackbar/warn
 import { ConnectionService } from '@core/services/connection.service';
 import { I18NService } from '@core/i18n/service/i18n.service';
 import { SelectLanguageComponent } from '@core/i18n/components/select-language/select-language.component';
+import { EditButtonComponent } from './components/edit-button/edit-button.component';
+import { CommonModule } from '@angular/common';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyAno4ijgCtPJgaPzjDioQ_yNIN_RTw1d-8",
@@ -26,6 +28,7 @@ export const firebaseConfig = {
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireAuthModule,
         AngularFirestoreModule,
+        CommonModule,
         HttpModule,
         MatButtonModule,
         MatIconModule,
@@ -36,12 +39,14 @@ export const firebaseConfig = {
         I18NPipe,
         ReplacePipe,
         SelectLanguageComponent,
-        WarningSnackbarComponent
+        WarningSnackbarComponent,
+        EditButtonComponent
     ],
     entryComponents: [
       WarningSnackbarComponent
     ],
     exports: [
+        EditButtonComponent,
         I18NPipe,
         ReplacePipe,
         SelectLanguageComponent,
