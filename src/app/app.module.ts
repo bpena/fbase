@@ -10,6 +10,7 @@ import { SecurityModule } from '@security/security.module';
 import { I18NService } from '@core/i18n/service/i18n.service';
 import { AuthService } from '@security/auth/services/auth.service';
 import { LoggedGuard } from '@security/auth/services/logged.guard';
+import { MainModule } from './modules/main/main.module';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { LoggedGuard } from '@security/auth/services/logged.guard';
         BrowserModule,
         BrowserAnimationsModule,
         CoreModule,
+        MainModule,
         MatButtonModule,
         MatCardModule,
         MatIconModule,

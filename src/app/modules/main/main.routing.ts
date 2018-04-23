@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
-import { MainModule } from './main.module';
+import { AdminModule } from './admin/admin.module';
+import { FrontModule } from './front/front.module';
 
 const routes: Routes = [
-    {
-        path: '',
-        component: MainComponent,
-        children: [
-            { path: '', loadChildren: () => MainModule }
-        ]
-    }
+    { path: 'admin', loadChildren: () => AdminModule },
+    { path: 'app', loadChildren: () => FrontModule }
 ];
 
 @NgModule({
