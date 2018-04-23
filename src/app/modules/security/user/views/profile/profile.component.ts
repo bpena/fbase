@@ -29,18 +29,27 @@ export class ProfileComponent implements OnInit {
     ngOnInit() {
 
         this.profileForm = new FormGroup({
-            username: new FormControl(null, Validators.required),
-            password: new FormControl(null, Validators.required),
-            confirmPassword: new FormControl(null, Validators.required),
-            email: new FormControl(null, [
+            username: new FormControl({value: null, disabled: true}, Validators.required),
+            password: new FormControl({value: null, disabled: true}),
+            confirmPassword: new FormControl({value: null, disabled: true}),
+            email: new FormControl({value: null, disabled: true}, [
                 Validators.required,
                 Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
             ]),
-            firstname: new FormControl(),
-            lastname: new FormControl()
+            firstname: new FormControl({value: null, disabled: true}),
+            lastname: new FormControl({value: null, disabled: true})
         },
             PasswordValidation.MatchPassword);
 
         this.user = this.authService.currentUser;
+    }
+
+    enableToogle(element: string) {
+        if (this.profileForm.get(element).enabled) {
+            this.profileForm.get(element).disable();
+        }
+        else {
+            this.profileForm.get(element).enable();
+        } 
     }
 }

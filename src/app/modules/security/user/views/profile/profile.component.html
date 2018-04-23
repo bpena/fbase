@@ -3,27 +3,16 @@
         <h3>{{ i18n.t('Hi {0}') | replace: user?.displayName }}!</h3>
         <form [formGroup]="profileForm" (ngSubmit)="onSubmit(form)" #form="ngForm">
             <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="{{ i18n.t('Username') }}" formControlName="username" #username>
+                <input type="text" matInput placeholder="{{ i18n.t('Username') }}" formControlName="username" [(ngModel)]="user.displayName"
+                    #username>
+                <app-edit-button matSuffix (click)="enableToogle('username')" [disabled]="username.disabled"></app-edit-button>
                 <mat-error *ngIf="profileForm.controls.username.hasError('required')" [innerHTML]="i18n.t('{0} is <strong>required</strong>') | replace : i18n.t('Username')">
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input type="password" matInput placeholder="{{ i18n.t('Password') }}" formControlName="password" #password>
-                <mat-error *ngIf="profileForm.controls.password.hasError('required')" [innerHTML]="i18n.t('{0} is <strong>required</strong>') | replace : i18n.t('Password')">
-                </mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="full-width">
-                <input type="password" matInput placeholder="{{ i18n.t('Confirm Password') }}" formControlName="confirmPassword" #confirmPassword>
-                <mat-error *ngIf="profileForm.controls.confirmPassword.hasError('required')" [innerHTML]="i18n.t('{0} is <strong>required</strong>') | replace : i18n.t('Confirm Password')">
-                </mat-error>
-                <mat-error *ngIf="profileForm.controls.confirmPassword.hasError('MatchPassword')" [innerHTML]="i18n.t('{0} and {1} <strong>do not match</strong>') | replace : i18n.t('Password') : i18n.t('Confirm Password')">
-                </mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="{{ i18n.t('Email') }}" formControlName="email" #email>
+                <input type="text" matInput placeholder="{{ i18n.t('Email') }}" formControlName="email" [(ngModel)]="user.email" #email>
+                <app-edit-button matSuffix (click)="enableToogle('email')" [disabled]="email.disabled"></app-edit-button>
                 <mat-error *ngIf="profileForm.controls.email.hasError('pattern')" [innerHTML]="i18n.t('Please enter a valid email address')">
                 </mat-error>
                 <mat-error *ngIf="profileForm.controls.email.hasError('required')" [innerHTML]="i18n.t('{0} is <strong>required</strong>') | replace : i18n.t('Email')">
@@ -31,13 +20,31 @@
             </mat-form-field>
 
             <mat-form-field class="full-width">
+                <input type="password" matInput placeholder="{{ i18n.t('Password') }}" formControlName="password" #password>
+                <app-edit-button matSuffix (click)="enableToogle('password')" [disabled]="password.disabled"></app-edit-button>
+                <mat-error *ngIf="profileForm.controls.password.hasError('required')" [innerHTML]="i18n.t('{0} is <strong>required</strong>') | replace : i18n.t('Password')">
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input type="password" matInput placeholder="{{ i18n.t('Confirm Password') }}" formControlName="confirmPassword" #confirmPassword>
+                <app-edit-button matSuffix (click)="enableToogle('confirmPassword')" [disabled]="confirmPassword.disabled"></app-edit-button>
+                <mat-error *ngIf="profileForm.controls.confirmPassword.hasError('required')" [innerHTML]="i18n.t('{0} is <strong>required</strong>') | replace : i18n.t('Confirm Password')">
+                </mat-error>
+                <mat-error *ngIf="profileForm.controls.confirmPassword.hasError('MatchPassword')" [innerHTML]="i18n.t('{0} and {1} <strong>do not match</strong>') | replace : i18n.t('Password') : i18n.t('Confirm Password')">
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
                 <input type="text" matInput placeholder="{{ i18n.t('Firstname') }}" formControlName="firstname" #firstname>
+                <app-edit-button matSuffix (click)="enableToogle('firstname')" [disabled]="firstname.disabled"></app-edit-button>
                 <mat-error *ngIf="profileForm.controls.firstname.hasError('required')" [innerHTML]="i18n.t('{0} is <strong>required</strong>') | replace : i18n.t('Firstname')">
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field class="full-width">
                 <input type="text" matInput placeholder="{{ i18n.t('Lastname') }}" formControlName="lastname" #lastname>
+                <app-edit-button matSuffix (click)="enableToogle('lastname')" [disabled]="lastname.disabled"></app-edit-button>
                 <mat-error *ngIf="profileForm.controls.lastname.hasError('required')" [innerHTML]="i18n.t('{0} is <strong>required</strong>') | replace : i18n.t('Lastname')">
                 </mat-error>
             </mat-form-field>
