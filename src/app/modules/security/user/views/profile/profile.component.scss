@@ -1,0 +1,12 @@
+@import '~styles/variables';
+:host {
+    overflow: auto;
+
+    .mat-card {
+        min-height: calc(600px - 64px - 48px);
+
+        @media(max-width: $app-small-size) {
+            min-height: calc(600px - 56px - 48px);
+        }
+    }
+}
