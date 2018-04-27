@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
         this.user = this.authService.currentUser;
     }
 
-    enableToogle(element: string) {
+    enableToggle(element: string) {
         if (this.profileForm.get(element).enabled) {
             this.profileForm.get(element).disable();
         }
