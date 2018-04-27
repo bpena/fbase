@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserMenuComponent } from '@security/user/components/user-menu/user-menu.component';
-import { MatMenuModule, MatIconModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatMenuModule, MatIconModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule } from '@angular/material';
 import { ProfileComponent } from './views/profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserI18NService } from '@security/user/i18n/user-i18n.service';
@@ -20,6 +20,7 @@ import { UserRouting } from '@security/user/user.routing';
     MatIconModule,
     MatInputModule,
     MatMenuModule,
+    MatSlideToggleModule,
     ReactiveFormsModule,
     UserRouting
   ],

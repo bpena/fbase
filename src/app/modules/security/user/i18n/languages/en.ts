@@ -1,5 +1,7 @@
 export class EN {
     public static labels: Map<string, string> = new Map<string, string>([
+        ['Log out', 'Log out'],
+        ['Profile', 'Profile'],
         ['Username', 'Username'],
         ['Password', 'Password'],
         ['Confirm Password', 'Confirm Password'],
