@@ -2,6 +2,7 @@
     <mat-card-content>
         <h3>{{ i18n.t('Hi {0}') | replace: user?.displayName }}!</h3>
         <form [formGroup]="profileForm" (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <mat-slide-toggle>Slide me!</mat-slide-toggle>
             <mat-form-field class="full-width">
                 <input type="text" matInput placeholder="{{ i18n.t('Username') }}" formControlName="username" [(ngModel)]="user.displayName"
                     #username>
