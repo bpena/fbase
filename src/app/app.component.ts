@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@security/auth/services/auth.service';
+declare var device;
 
 @Component({
     selector: 'app-root',
@@ -15,5 +16,11 @@ export class AppComponent {
 
     constructor(private authService: AuthService) {
         this.isLogged = this.authService.authenticated;
+    }
+
+    ngOnInit() { 
+        document.addEventListener('deviceready', () => { 
+            alert(device.platform); 
+        }, false); 
     }
 }
