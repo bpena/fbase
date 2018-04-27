@@ -158,7 +158,7 @@ export class AuthService {
 
         _promise
             .then(credential => {
-                this.authState = credential.user;
+                this.authState = credential;
                 this.updateUserData();
             })
             .catch(error => this.handleError(error, this));
