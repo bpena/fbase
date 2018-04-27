@@ -1,11 +1,21 @@
 @import '~styles/functions';
+@import '~styles/variables';
 $facebook-color: #3b5998;
 $twitter-color: #55acee;
 $google-color: #dd4b39;
 $github-color: #333333;
 
 :host {
-    
+    overflow: auto;
+
+    .mat-card {
+        min-height: calc(600px - 64px);
+
+        @media(max-width: $app-small-size) {
+            min-height: calc(600px - 56px);
+        }
+    }
+
     .button-group {
         @include flex-column();
         margin-top: 5px;
