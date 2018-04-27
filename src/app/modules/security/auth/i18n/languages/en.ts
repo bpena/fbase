@@ -17,5 +17,8 @@ export class EN {
         ['{0} is <strong>required</strong>', '{0} is <strong>required</strong>'],
         ['Please enter a valid email address', 'Please enter a valid email address'],
         ['{0} and {1} <strong>do not match</strong>', '{0} and {1} <strong>do not match</strong>'],
+        ['Guest', 'Guest'],
+        ['Anonymous', 'Anonymous'],
+        ['User without a Name', 'User without a Name'],
     ])
 }

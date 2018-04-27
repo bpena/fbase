@@ -17,5 +17,8 @@ export class ES {
         ['{0} is <strong>required</strong>', '{0} es <strong>requerido</strong>'],
         ['Please enter a valid email address', 'Introduzca una direccion de correo valida.'],
         ['{0} and {1} <strong>do not match</strong>', '{0} y {1} <strong>no coinciden</strong>'],
+        ['Guest', 'Invitado'],
+        ['Anonymous', 'Anónimo'],
+        ['User without a Name', 'Usuario sin nombre'],
     ]);
 }

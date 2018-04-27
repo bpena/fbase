@@ -3,11 +3,15 @@
 </button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item disabled>
-      <mat-icon>person_outline</mat-icon>
-      <span>{{ displayname }}</span>
+    <mat-icon>account_circle</mat-icon>
+    <span>{{ displayname }}</span>
+  </button>
+  <button mat-menu-item (click)="gotoProfile()">
+    <mat-icon>person_outline</mat-icon>
+    <span>{{ i18n.t('Profile') }}</span>
   </button>
   <button mat-menu-item (click)="logout()">
     <mat-icon>exit_to_app</mat-icon>
-    <span>Log out</span>
+    <span>{{ i18n.t('Log out') }}</span>
   </button>
 </mat-menu>

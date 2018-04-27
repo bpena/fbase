@@ -9,6 +9,7 @@ import { MatSnackBar, _MatProgressSpinnerMixinBase } from '@angular/material';
 import { WarningSnackbarComponent } from '@core/components/warning-snackbar/warning-snackbar.component';
 import { WarningSnackbarType } from '@core/components/warning-snackbar/warning-snackbar-type.enum';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { AuthI18NService } from '@security/auth/i18n/auth-i18n.service';
 
 @Injectable()
 export class AuthService {
@@ -18,6 +19,7 @@ export class AuthService {
 
     constructor(private firebaseAuth: AngularFireAuth,
         private db: AngularFirestore,
+        private i18n: AuthI18NService,
         private router: Router,
         private snackBar: MatSnackBar) {
         this.firebaseAuth.authState.subscribe(auth => {
@@ -58,9 +60,9 @@ export class AuthService {
 
     // Returns current user display name or Guest
     get currentUserDisplayName(): string {
-        if (!this.authState) { return 'Guest' }
-        else if (this.currentUserAnonymous) { return 'Anonymous' }
-        else { return this.authState['displayName'] || 'User without a Name' }
+        if (!this.authState) { return this.i18n.t('Guest') }
+        else if (this.currentUserAnonymous) { return this.i18n.t('Anonymous') }
+        else { return this.authState['displayName'] || this.i18n.t('User without a Name') }
     }
 
     private login() {
