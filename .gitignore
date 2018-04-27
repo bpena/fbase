@@ -6,7 +6,7 @@
 /tmp
 /out-tsc
 /platforms
-/plugins
+/plugins 
 
 # dependencies
 /node_modules
