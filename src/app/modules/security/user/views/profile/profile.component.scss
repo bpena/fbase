@@ -3,10 +3,21 @@
     overflow: auto;
 
     .mat-card {
-        min-height: calc(600px - 64px - 48px);
+        min-height: calc(600px - 64px);
 
         @media(max-width: $app-small-size) {
-            min-height: calc(600px - 56px - 48px);
+            min-height: calc(600px - 56px);
+        }
+        
+        .mat-card-header {
+            .mat-card-avatar {
+                font-size: 2em;
+            }
+
+            .mat-card-title {
+                font-size: 2.5em;
+                margin: 0;
+            }    
         }
     }
 }
